@@ -13,6 +13,7 @@ void Digital7SegRGB::begin(int Pin, int Digit) {
 		PIXEL = 7;
 	}
 	pin = Pin;
+	Clear();
 	if (DEBUG == 1) {
 		Serial.println("RGB Start on Pin");
 		Serial.println(Pin);
