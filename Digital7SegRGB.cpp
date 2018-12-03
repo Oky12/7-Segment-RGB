@@ -5,19 +5,21 @@
 #define DEBUG 1 
 
 int *PIXEL;
+int *pin;
+
 
 void Digital7SegRGB::begin(int Pin, int Digit) {
 	if (Digit == 1) {
-		PIXEL = 1;
+		PIXEL = 7;
 	}
-	Adafruit_NeoPixel pixels = Adafruit_NeoPixel(PIXEL, Pin, NEO_GRB + NEO_KHZ800);
+	pin = Pin;
 	if (DEBUG == 1) {
 		Serial.println("RGB Start on Pin");
 		Serial.println(Pin);
 
 	}
 }
-
+Adafruit_NeoPixel pixels = Adafruit_NeoPixel(PIXEL, pin, NEO_GRB + NEO_KHZ800);
 
 void Digital7SegRGB::Clear() {
 	for (int i = 0; i < PIXEL; i++) {
