@@ -1,0 +1,5 @@
+Digital7SegRGB	KEYWORD1
+SetDigit	KEYWORD1
+
+SetSeg		KEYWORD2
+PrintDigit	KEYWORD2
