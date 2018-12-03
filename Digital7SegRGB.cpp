@@ -4,8 +4,8 @@
 #include <Arduino.h>
 #define DEBUG 1 
 
-int *PIXEL;
-int *pin;
+int PIXEL;
+int pin;
 
 
 void Digital7SegRGB::begin(int Pin, int Digit) {
