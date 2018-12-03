@@ -1,4 +1,5 @@
 Digital7SegRGB	KEYWORD1
 
+Clear		KEYWORD2
 SetSeg		KEYWORD2
 PrintDigit	KEYWORD2
