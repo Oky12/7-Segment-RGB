@@ -3,11 +3,11 @@
 #include <Adafruit_NeoPixel.h>
 #include <Arduino.h>
 #define DEBUG 1 
-Adafruit_NeoPixel::Adafruit_NeoPixel(PIXEL, pin, NEO_GRB + NEO_KHZ800);
+
 int PIXEL;
 int pin;
 
-
+Adafruit_NeoPixel(PIXEL, pin, NEO_GRB + NEO_KHZ800);
 void Digital7SegRGB::begin(int Pin, int Digit) {
 	if (Digit == 1) {
 		PIXEL = 7;
@@ -27,8 +27,8 @@ void Digital7SegRGB::Clear() {
 }
 
 void Digital7SegRGB::SetSeg(int Seg, int R, int G, int B) {
-	void Adafruit_NeoPixel::setPixelColor(Seg, Adafruit_NeoPixel::Color(R, G, B));
-    void Adafruit_NeoPixel::show(void);
+	void setPixelColor(Seg, Adafruit_NeoPixel::Color(R, G, B));
+    void show(void);
 }
 
 void Digital7SegRGB::PrintDigit(int Value, int Digit, int R, int G, int B) {
