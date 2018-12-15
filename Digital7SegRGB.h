@@ -13,5 +13,6 @@ private:
     int TempValue;
 	int PIXEL;
 	int pin;
+	Adafruit_NeoPixel strip;
 };
 #endif
