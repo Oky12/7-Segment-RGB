@@ -1,35 +1,41 @@
 
 #include "Digital7SegRGB.h"
-#include <Adafruit_NeoPixel.h>
-#include <Arduino.h>
-#define DEBUG 1 
+#define DEBUG 0 
 
-int PIXEL;
-int pin;
 Adafruit_NeoPixel strip;
-
-void Digital7SegRGB::begin(int Pin, int Digit) {
-	if (Digit == 1) {
+void Digital7SegRGB::begin(uint16_t n, uint8_t p) {
+	if (n == 1) {
 		PIXEL = 7;
 	}
-	pin = Pin;
-	strip = Adafruit_NeoPixel(PIXEL, Pin, NEO_GRB + NEO_KHZ800);
+	strip = Adafruit_NeoPixel(n, p, NEO_GRB + NEO_KHZ800);
 	if (DEBUG == 1) {
 		Serial.println("RGB Start on Pin");
-		Serial.println(Pin);
+		Serial.println(p);
 
 	}
 }
 
 void Digital7SegRGB::Clear() {
 	for (int i = 0; i < PIXEL; i++) {
-		strip.SetSeg(i, 0, 0, 0);
+		SetSeg(i, 0, 0, 0);
 	}
 }
 
-void Digital7SegRGB::SetSeg(int Seg, int R, int G, int B) {
-	strip.setPixelColor(Seg, Adafruit_NeoPixel::Color(R, G, B));
-	strip.show(void);
+void Digital7SegRGB::SetSeg(uint16_t Seg, uint8_t R, uint8_t G, uint8_t B) {
+	if (DEBUG == 1) {
+		Serial.print("Segment set to");
+		Serial.print(Seg);
+		Serial.print(" With Color ");
+		Serial.print("R=");
+		Serial.print(R);
+		Serial.print("G=");
+		Serial.print(G);
+		Serial.print("B="); 
+		Serial.println(B);
+
+    }
+	strip.setPixelColor(Seg, R, G, B);
+	strip.show();
 }
 
 void Digital7SegRGB::PrintDigit(int Value, int Digit, int R, int G, int B) {
@@ -39,73 +45,73 @@ void Digital7SegRGB::PrintDigit(int Value, int Digit, int R, int G, int B) {
 	if (Digit == 1) {
 		switch (Value) {
 		case 0:
-			strip.SetSeg(0, R, G, B);
-			strip.SetSeg(1, R, G, B);
-			strip.SetSeg(2, R, G, B);
-			strip.SetSeg(3, R, G, B);
-			strip.SetSeg(4, R, G, B);
-			strip.SetSeg(5, R, G, B);
+			SetSeg(0, R, G, B);
+			SetSeg(1, R, G, B);
+			SetSeg(2, R, G, B);
+			SetSeg(3, R, G, B);
+			SetSeg(4, R, G, B);
+			SetSeg(5, R, G, B);
 			break;
 		case 1:
-			strip.SetSeg(1, R, G, B);
-			strip.SetSeg(2, R, G, B);
+			SetSeg(1, R, G, B);
+			SetSeg(2, R, G, B);
 			break;
 		case 2:
-			strip.SetSeg(0, R, G, B);
-			strip.SetSeg(1, R, G, B);
-			strip.SetSeg(6, R, G, B);
-			strip.SetSeg(4, R, G, B);
-			strip.SetSeg(3, R, G, B);
+			SetSeg(0, R, G, B);
+			SetSeg(1, R, G, B);
+			SetSeg(6, R, G, B);
+			SetSeg(4, R, G, B);
+			SetSeg(3, R, G, B);
 			break;
 		case 3:
-			strip.SetSeg(0, R, G, B);
-			strip.SetSeg(1, R, G, B);
-			strip.SetSeg(2, R, G, B);
-			strip.SetSeg(6, R, G, B);
-			strip.SetSeg(3, R, G, B);
+			SetSeg(0, R, G, B);
+			SetSeg(1, R, G, B);
+			SetSeg(2, R, G, B);
+			SetSeg(6, R, G, B);
+			SetSeg(3, R, G, B);
 			break;
 		case 4:
-			strip.SetSeg(1, R, G, B);
-			strip.SetSeg(2, R, G, B);
-			strip.SetSeg(5, R, G, B);
-			strip.SetSeg(6, R, G, B);
+			SetSeg(1, R, G, B);
+			SetSeg(2, R, G, B);
+			SetSeg(5, R, G, B);
+			SetSeg(6, R, G, B);
 			break;
 		case 5:
-			strip.SetSeg(0, R, G, B);
-			strip.SetSeg(5, R, G, B);
-			strip.SetSeg(2, R, G, B);
-			strip.SetSeg(6, R, G, B);
-			strip.SetSeg(3, R, G, B);
+			SetSeg(0, R, G, B);
+			SetSeg(5, R, G, B);
+			SetSeg(2, R, G, B);
+			SetSeg(6, R, G, B);
+			SetSeg(3, R, G, B);
 			break;
 		case 6:
-			strip.SetSeg(0, R, G, B);
-			strip.SetSeg(2, R, G, B);
-			strip.SetSeg(3, R, G, B);
-			strip.SetSeg(4, R, G, B);
-			strip.SetSeg(5, R, G, B);
-			strip.SetSeg(6, R, G, B);
+			SetSeg(0, R, G, B);
+			SetSeg(2, R, G, B);
+			SetSeg(3, R, G, B);
+			SetSeg(4, R, G, B);
+			SetSeg(5, R, G, B);
+			SetSeg(6, R, G, B);
 			break;
 		case 7:
-			strip.SetSeg(0, R, G, B);
-			strip.SetSeg(1, R, G, B);
-			strip.SetSeg(2, R, G, B);
+			SetSeg(0, R, G, B);
+			SetSeg(1, R, G, B);
+			SetSeg(2, R, G, B);
 			break;
 		case 8:
-			strip.SetSeg(0, R, G, B);
-			strip.SetSeg(1, R, G, B);
-			strip.SetSeg(2, R, G, B);
-			strip.SetSeg(3, R, G, B);
-			strip.SetSeg(4, R, G, B);
-			strip.SetSeg(5, R, G, B);
-			strip.SetSeg(6, R, G, B);
+			SetSeg(0, R, G, B);
+			SetSeg(1, R, G, B);
+			SetSeg(2, R, G, B);
+			SetSeg(3, R, G, B);
+			SetSeg(4, R, G, B);
+			SetSeg(5, R, G, B);
+			SetSeg(6, R, G, B);
 			break;
 		case 9:
-			strip.SetSeg(0, R, G, B);
-			strip.SetSeg(1, R, G, B);
-			strip.SetSeg(2, R, G, B);
-			strip.SetSeg(3, R, G, B);
-			strip.SetSeg(5, R, G, B);
-			strip.SetSeg(6, R, G, B);
+			SetSeg(0, R, G, B);
+			SetSeg(1, R, G, B);
+			SetSeg(2, R, G, B);
+			SetSeg(3, R, G, B);
+			SetSeg(5, R, G, B);
+			SetSeg(6, R, G, B);
 			break;
 		}
 	}
