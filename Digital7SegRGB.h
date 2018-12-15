@@ -10,7 +10,7 @@ public:
 	void SetSeg(int Seg, int R, int G, int B);
 	void PrintDigit(int Value, int Digit, int R, int G, int B);
 private:
-	int TempValue;
+    int TempValue;
 	int PIXEL;
 	int pin;
 };
