@@ -1,13 +1,14 @@
-
 #include "Digital7SegRGB.h"
-#define DEBUG 0 
+#include <Adafruit_NeoPixel.h>
+#define DEBUG 0
 
 Adafruit_NeoPixel strip;
 void Digital7SegRGB::begin(uint16_t n, uint8_t p) {
 	if (n == 1) {
 		PIXEL = 7;
 	}
-	strip = Adafruit_NeoPixel(n, p, NEO_GRB + NEO_KHZ800);
+	strip = Adafruit_NeoPixel(7, 3, NEO_GRB + NEO_KHZ800);
+	strip.begin();
 	if (DEBUG == 1) {
 		Serial.println("RGB Start on Pin");
 		Serial.println(p);
@@ -16,24 +17,13 @@ void Digital7SegRGB::begin(uint16_t n, uint8_t p) {
 }
 
 void Digital7SegRGB::Clear() {
-	for (int i = 0; i < PIXEL; i++) {
-		SetSeg(i, 0, 0, 0);
+	strip.clear();
+	if (DEBUG == 1) {
+		Serial.println("Clear LED buffer");
 	}
 }
 
 void Digital7SegRGB::SetSeg(uint16_t Seg, uint8_t R, uint8_t G, uint8_t B) {
-	if (DEBUG == 1) {
-		Serial.print("Segment set to");
-		Serial.print(Seg);
-		Serial.print(" With Color ");
-		Serial.print("R=");
-		Serial.print(R);
-		Serial.print("G=");
-		Serial.print(G);
-		Serial.print("B="); 
-		Serial.println(B);
-
-    }
 	strip.setPixelColor(Seg, R, G, B);
 	strip.show();
 }
@@ -42,6 +32,7 @@ void Digital7SegRGB::PrintDigit(int Value, int Digit, int R, int G, int B) {
 	if (Value != TempValue) {
 		Clear();
 	}
+	if (DEBUG == 1) { Serial.print("Print Value "); Serial.println(Value); }
 	if (Digit == 1) {
 		switch (Value) {
 		case 0:
