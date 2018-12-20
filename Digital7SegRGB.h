@@ -5,9 +5,9 @@
 
 class Digital7SegRGB {
 public:
-	void begin(int Pin, int Digit);
+	void begin(uint16_t n, uint8_t p);
 	void Clear();
-	void SetSeg(int Seg, int R, int G, int B);
+	void SetSeg(uint16_t Seg, uint8_t R, uint8_t G, uint8_t B);
 	void PrintDigit(int Value, int Digit, int R, int G, int B);
 private:
     int TempValue;
