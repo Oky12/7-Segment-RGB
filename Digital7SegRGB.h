@@ -10,7 +10,6 @@ public:
 	void SetSeg(uint16_t Seg, uint8_t R, uint8_t G, uint8_t B);
 	void PrintDigit(int Value, int Digit, int R, int G, int B);
 private:
-    int TempValue;
 	int PIXEL;
 	int pin;
 	Adafruit_NeoPixel strip;

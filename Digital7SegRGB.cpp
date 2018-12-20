@@ -43,79 +43,101 @@ void Digital7SegRGB::SetSeg(uint16_t Seg, uint8_t R, uint8_t G, uint8_t B) {
 
 void Digital7SegRGB::PrintDigit(int Value, int Digit, int R, int G, int B) {
 	if (DEBUG == 1) { Serial.print("Print Value "); Serial.println(Value); }
-	if (Digit == 1) {
-		switch (Value) {
-		case 0:
-			SetSeg(0, R, G, B);
-			SetSeg(1, R, G, B);
-			SetSeg(2, R, G, B);
-			SetSeg(3, R, G, B);
-			SetSeg(4, R, G, B);
-			SetSeg(5, R, G, B);
-			break;
-		case 1:
-			SetSeg(1, R, G, B);
-			SetSeg(2, R, G, B);
-			break;
-		case 2:
-			SetSeg(0, R, G, B);
-			SetSeg(1, R, G, B);
-			SetSeg(6, R, G, B);
-			SetSeg(4, R, G, B);
-			SetSeg(3, R, G, B);
-			break;
-		case 3:
-			SetSeg(0, R, G, B);
-			SetSeg(1, R, G, B);
-			SetSeg(2, R, G, B);
-			SetSeg(6, R, G, B);
-			SetSeg(3, R, G, B);
-			break;
-		case 4:
-			SetSeg(1, R, G, B);
-			SetSeg(2, R, G, B);
-			SetSeg(5, R, G, B);
-			SetSeg(6, R, G, B);
-			break;
-		case 5:
-			SetSeg(0, R, G, B);
-			SetSeg(5, R, G, B);
-			SetSeg(2, R, G, B);
-			SetSeg(6, R, G, B);
-			SetSeg(3, R, G, B);
-			break;
-		case 6:
-			SetSeg(0, R, G, B);
-			SetSeg(2, R, G, B);
-			SetSeg(3, R, G, B);
-			SetSeg(4, R, G, B);
-			SetSeg(5, R, G, B);
-			SetSeg(6, R, G, B);
-			break;
-		case 7:
-			SetSeg(0, R, G, B);
-			SetSeg(1, R, G, B);
-			SetSeg(2, R, G, B);
-			break;
-		case 8:
-			SetSeg(0, R, G, B);
-			SetSeg(1, R, G, B);
-			SetSeg(2, R, G, B);
-			SetSeg(3, R, G, B);
-			SetSeg(4, R, G, B);
-			SetSeg(5, R, G, B);
-			SetSeg(6, R, G, B);
-			break;
-		case 9:
-			SetSeg(0, R, G, B);
-			SetSeg(1, R, G, B);
-			SetSeg(2, R, G, B);
-			SetSeg(3, R, G, B);
-			SetSeg(5, R, G, B);
-			SetSeg(6, R, G, B);
-			break;
-		}
+	if (Digit == 1) {		
+			switch (Value) {
+			case 0:
+				SetSeg(0, R, G, B);
+				SetSeg(1, R, G, B);
+				SetSeg(2, R, G, B);
+				SetSeg(3, R, G, B);
+				SetSeg(4, R, G, B);
+				SetSeg(5, R, G, B);
+				SetSeg(6, 0, 0, 0);
+				break;
+			case 1:
+				SetSeg(0, 0, 0, 0);
+				SetSeg(1, R, G, B);
+				SetSeg(2, R, G, B);
+				SetSeg(3, 0, 0, 0);
+				SetSeg(4, 0, 0, 0);
+				SetSeg(5, 0, 0, 0);
+				SetSeg(6, 0, 0, 0);
+				break;
+			case 2:
+				SetSeg(0, R, G, B);
+				SetSeg(1, R, G, B);
+				SetSeg(2, 0, 0, 0);
+				SetSeg(3, R, G, B);
+				SetSeg(4, R, G, B);
+				SetSeg(5, 0, 0, 0);
+				SetSeg(6, R, G, B);
+				break;
+			case 3:
+				SetSeg(0, R, G, B);
+				SetSeg(1, R, G, B);
+				SetSeg(2, R, G, B);
+				SetSeg(3, R, G, B);
+				SetSeg(4, 0, 0, 0);
+				SetSeg(5, 0, 0, 0);
+				SetSeg(6, R, G, B);
+				break;
+			case 4:
+				SetSeg(0, 0, 0, 0);
+				SetSeg(1, R, G, B);
+				SetSeg(2, R, G, B);
+				SetSeg(3, 0, 0, 0);
+				SetSeg(4, 0, 0, 0);
+				SetSeg(5, R, G, B);
+				SetSeg(6, R, G, B);
+				break;
+			case 5:
+				SetSeg(0, R, G, B);
+				SetSeg(1, 0, 0, 0);
+				SetSeg(2, R, G, B);
+				SetSeg(3, R, G, B);
+				SetSeg(4, 0, 0, 0);
+				SetSeg(5, R, G, B);
+				SetSeg(6, R, G, B);
+				break;
+			case 6:
+				SetSeg(0, R, G, B);
+				SetSeg(1, 0, 0, 0);
+				SetSeg(2, R, G, B);
+				SetSeg(3, R, G, B);
+				SetSeg(4, R, G, B);
+				SetSeg(5, R, G, B);
+				SetSeg(6, R, G, B);
+				break;
+			case 7:
+				SetSeg(0, R, G, B);
+				SetSeg(1, R, G, B);
+				SetSeg(2, R, G, B);
+				SetSeg(3, 0, 0, 0);
+				SetSeg(4, 0, 0, 0);
+				SetSeg(5, 0, 0, 0);
+				SetSeg(6, 0, 0, 0);
+				break;
+			case 8:
+				SetSeg(0, R, G, B);
+				SetSeg(1, R, G, B);
+				SetSeg(2, R, G, B);
+				SetSeg(3, R, G, B);
+				SetSeg(4, R, G, B);
+				SetSeg(5, R, G, B);
+				SetSeg(6, R, G, B);
+				break;
+			case 9:
+				SetSeg(0, R, G, B);
+				SetSeg(1, R, G, B);
+				SetSeg(2, R, G, B);
+				SetSeg(3, R, G, B);
+				SetSeg(4, 0, 0, 0);
+				SetSeg(5, R, G, B);
+				SetSeg(6, R, G, B);
+				break;
+			}		
 	}
+
 	if (Digit == 3) {
 		switch (Value) {
 		case 0:
@@ -125,40 +147,56 @@ void Digital7SegRGB::PrintDigit(int Value, int Digit, int R, int G, int B) {
 			SetSeg(3 + 14, R, G, B);
 			SetSeg(4 + 14, R, G, B);
 			SetSeg(5 + 14, R, G, B);
+			SetSeg(6 + 14, 0, 0, 0);
 			break;
 		case 1:
+			SetSeg(0 + 14, 0, 0, 0);
 			SetSeg(1 + 14, R, G, B);
 			SetSeg(2 + 14, R, G, B);
+			SetSeg(3 + 14, 0, 0, 0);
+			SetSeg(4 + 14, 0, 0, 0);
+			SetSeg(5 + 14, 0, 0, 0);
+			SetSeg(6 + 14, 0, 0, 0);
 			break;
 		case 2:
 			SetSeg(0 + 14, R, G, B);
 			SetSeg(1 + 14, R, G, B);
-			SetSeg(6 + 14, R, G, B);
-			SetSeg(4 + 14, R, G, B);
+			SetSeg(2 + 14, 0, 0, 0);
 			SetSeg(3 + 14, R, G, B);
+			SetSeg(4 + 14, R, G, B);
+			SetSeg(5 + 14, 0, 0, 0);
+			SetSeg(6 + 14, R, G, B);
 			break;
 		case 3:
 			SetSeg(0 + 14, R, G, B);
 			SetSeg(1 + 14, R, G, B);
 			SetSeg(2 + 14, R, G, B);
-			SetSeg(6 + 14, R, G, B);
 			SetSeg(3 + 14, R, G, B);
+			SetSeg(4 + 14, 0, 0, 0);
+			SetSeg(5 + 14, 0, 0, 0);
+			SetSeg(6 + 14, R, G, B);
 			break;
 		case 4:
+			SetSeg(0 + 14, 0, 0, 0);
 			SetSeg(1 + 14, R, G, B);
 			SetSeg(2 + 14, R, G, B);
+			SetSeg(3 + 14, 0, 0, 0);
+			SetSeg(4 + 14, 0, 0, 0);
 			SetSeg(5 + 14, R, G, B);
 			SetSeg(6 + 14, R, G, B);
 			break;
 		case 5:
 			SetSeg(0 + 14, R, G, B);
-			SetSeg(5 + 14, R, G, B);
+			SetSeg(1 + 14, 0, 0, 0);
 			SetSeg(2 + 14, R, G, B);
-			SetSeg(6 + 14, R, G, B);
 			SetSeg(3 + 14, R, G, B);
+			SetSeg(4 + 14, 0, 0, 0);
+			SetSeg(5 + 14, R, G, B);
+			SetSeg(6 + 14, R, G, B);
 			break;
 		case 6:
 			SetSeg(0 + 14, R, G, B);
+			SetSeg(1 + 14, 0, 0, 0);
 			SetSeg(2 + 14, R, G, B);
 			SetSeg(3 + 14, R, G, B);
 			SetSeg(4 + 14, R, G, B);
@@ -169,6 +207,10 @@ void Digital7SegRGB::PrintDigit(int Value, int Digit, int R, int G, int B) {
 			SetSeg(0 + 14, R, G, B);
 			SetSeg(1 + 14, R, G, B);
 			SetSeg(2 + 14, R, G, B);
+			SetSeg(3 + 14, 0, 0, 0);
+			SetSeg(4 + 14, 0, 0, 0);
+			SetSeg(5 + 14, 0, 0, 0);
+			SetSeg(6 + 14, 0, 0, 0);
 			break;
 		case 8:
 			SetSeg(0 + 14, R, G, B);
@@ -184,86 +226,106 @@ void Digital7SegRGB::PrintDigit(int Value, int Digit, int R, int G, int B) {
 			SetSeg(1 + 14, R, G, B);
 			SetSeg(2 + 14, R, G, B);
 			SetSeg(3 + 14, R, G, B);
+			SetSeg(4 + 14, 0, 0, 0);
 			SetSeg(5 + 14, R, G, B);
 			SetSeg(6 + 14, R, G, B);
 			break;
 		}
 	}
+
 	if (Digit == 2) {
-		switch (Value) {
-		case 0:
-			SetSeg(0 + 7, R, G, B);
-			SetSeg(1 + 7, R, G, B);
-			SetSeg(2 + 7, R, G, B);
-			SetSeg(3 + 7, R, G, B);
-			SetSeg(4 + 7, R, G, B);
-			SetSeg(5 + 7, R, G, B);
-			break;
-		case 1:
-			SetSeg(1 + 7, R, G, B);
-			SetSeg(2 + 7, R, G, B);
-			break;
-		case 2:
-			SetSeg(0 + 7, R, G, B);
-			SetSeg(1 + 7, R, G, B);
-			SetSeg(6 + 7, R, G, B);
-			SetSeg(4 + 7, R, G, B);
-			SetSeg(3 + 7, R, G, B);
-			break;
-		case 3:
-			SetSeg(0 + 7, R, G, B);
-			SetSeg(1 + 7, R, G, B);
-			SetSeg(2 + 7, R, G, B);
-			SetSeg(6 + 7, R, G, B);
-			SetSeg(3 + 7, R, G, B);
-			break;
-		case 4:
-			SetSeg(1 + 7, R, G, B);
-			SetSeg(2 + 7, R, G, B);
-			SetSeg(5 + 7, R, G, B);
-			SetSeg(6 + 7, R, G, B);
-			break;
-		case 5:
-			SetSeg(0 + 7, R, G, B);
-			SetSeg(5 + 7, R, G, B);
-			SetSeg(2 + 7, R, G, B);
-			SetSeg(6 + 7, R, G, B);
-			SetSeg(3 + 7, R, G, B);
-			break;
-		case 6:
-			SetSeg(0 + 7, R, G, B);
-			SetSeg(2 + 7, R, G, B);
-			SetSeg(3 + 7, R, G, B);
-			SetSeg(4 + 7, R, G, B);
-			SetSeg(5 + 7, R, G, B);
-			SetSeg(6 + 7, R, G, B);
-			break;
-		case 7:
-			SetSeg(0 + 7, R, G, B);
-			SetSeg(1 + 7, R, G, B);
-			SetSeg(2 + 7, R, G, B);
-			break;
-		case 8:
-			SetSeg(0 + 7, R, G, B);
-			SetSeg(1 + 7, R, G, B);
-			SetSeg(2 + 7, R, G, B);
-			SetSeg(3 + 7, R, G, B);
-			SetSeg(4 + 7, R, G, B);
-			SetSeg(5 + 7, R, G, B);
-			SetSeg(6 + 7, R, G, B);
-			break;
-		case 9:
-			SetSeg(0 + 7, R, G, B);
-			SetSeg(1 + 7, R, G, B);
-			SetSeg(2 + 7, R, G, B);
-			SetSeg(3 + 7, R, G, B);
-			SetSeg(5 + 7, R, G, B);
-			SetSeg(6 + 7, R, G, B);
-			break;
+			switch (Value) {
+			case 0:
+				SetSeg(0 + 7, R, G, B);
+				SetSeg(1 + 7, R, G, B);
+				SetSeg(2 + 7, R, G, B);
+				SetSeg(3 + 7, R, G, B);
+				SetSeg(4 + 7, R, G, B);
+				SetSeg(5 + 7, R, G, B);
+				SetSeg(6 + 7, 0, 0, 0);
+				break;
+			case 1:
+				SetSeg(0 + 7, 0, 0, 0);
+				SetSeg(1 + 7, R, G, B);
+				SetSeg(2 + 7, R, G, B);
+				SetSeg(3 + 7, 0, 0, 0);
+				SetSeg(4 + 7, 0, 0, 0);
+				SetSeg(5 + 7, 0, 0, 0);
+				SetSeg(6 + 7, 0, 0, 0);
+				break;
+			case 2:
+				SetSeg(0 + 7, R, G, B);
+				SetSeg(1 + 7, R, G, B);
+				SetSeg(2 + 7, 0, 0, 0);
+				SetSeg(3 + 7, R, G, B);
+				SetSeg(4 + 7, R, G, B);
+				SetSeg(5 + 7, 0, 0, 0);
+				SetSeg(6 + 7, R, G, B);
+				break;
+			case 3:
+				SetSeg(0 + 7, R, G, B);
+				SetSeg(1 + 7, R, G, B);
+				SetSeg(2 + 7, R, G, B);
+				SetSeg(3 + 7, R, G, B);
+				SetSeg(4 + 7, 0, 0, 0);
+				SetSeg(5 + 7, 0, 0, 0);
+				SetSeg(6 + 7, R, G, B);
+				break;
+			case 4:
+				SetSeg(0 + 7, 0, 0, 0);
+				SetSeg(1 + 7, R, G, B);
+				SetSeg(2 + 7, R, G, B);
+				SetSeg(3 + 7, 0, 0, 0);
+				SetSeg(4 + 7, 0, 0, 0);
+				SetSeg(5 + 7, R, G, B);
+				SetSeg(6 + 7, R, G, B);
+				break;
+			case 5:
+				SetSeg(0 + 7, R, G, B);
+				SetSeg(1 + 7, 0, 0, 0);
+				SetSeg(2 + 7, R, G, B);
+				SetSeg(3 + 7, R, G, B);
+				SetSeg(4 + 7, 0, 0, 0);
+				SetSeg(5 + 7, R, G, B);
+				SetSeg(6 + 7, R, G, B);
+				break;
+			case 6:
+				SetSeg(0 + 7, R, G, B);
+				SetSeg(1 + 7, 0, 0, 0);
+				SetSeg(2 + 7, R, G, B);
+				SetSeg(3 + 7, R, G, B);
+				SetSeg(4 + 7, R, G, B);
+				SetSeg(5 + 7, R, G, B);
+				SetSeg(6 + 7, R, G, B);
+				break;
+			case 7:
+				SetSeg(0 + 7, R, G, B);
+				SetSeg(1 + 7, R, G, B);
+				SetSeg(2 + 7, R, G, B);
+				SetSeg(3 + 7, 0, 0, 0);
+				SetSeg(4 + 7, 0, 0, 0);
+				SetSeg(5 + 7, 0, 0, 0);
+				SetSeg(6 + 7, 0, 0, 0);
+				break;
+			case 8:
+				SetSeg(0 + 7, R, G, B);
+				SetSeg(1 + 7, R, G, B);
+				SetSeg(2 + 7, R, G, B);
+				SetSeg(3 + 7, R, G, B);
+				SetSeg(4 + 7, R, G, B);
+				SetSeg(5 + 7, R, G, B);
+				SetSeg(6 + 7, R, G, B);
+				break;
+			case 9:
+				SetSeg(0 + 7, R, G, B);
+				SetSeg(1 + 7, R, G, B);
+				SetSeg(2 + 7, R, G, B);
+				SetSeg(3 + 7, R, G, B);
+				SetSeg(4 + 7, 0, 0, 0);
+				SetSeg(5 + 7, R, G, B);
+				SetSeg(6 + 7, R, G, B);
+				break;
+			}
 		}
-	}
-	if (TempValue != Value) {
-		Clear();
-	}
-	TempValue = Value;
+	
 }
