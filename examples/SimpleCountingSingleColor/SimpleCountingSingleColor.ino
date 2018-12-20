@@ -1,9 +1,10 @@
 #include <Digital7SegRGB.h>
 Digital7SegRGB RGB;
+#define PIN 3;
+#define DIGIT 1;
 
 void setup() {
-  RGB.begin(7, 3);
-  RGB.Clear();
+  RGB.begin(DIGIT, PIN);
 }
 
 void loop() {
